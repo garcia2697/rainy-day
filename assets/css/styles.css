@@ -1,0 +1,17 @@
+main{
+    display: flex;
+}
+
+.one-city{
+    outline: black 1px solid;
+}
+
+.btn{
+    background-color: royalblue;
+    color: white;
+}
+
+.nav{
+    justify-content: center;
+    color: white;
+}
