@@ -2,6 +2,7 @@ main{
     display: flex;
 }
 
+
 .one-city{
     outline: black 1px solid;
 }
@@ -14,4 +15,12 @@ main{
 .nav{
     justify-content: center;
     color: white;
+}
+
+#iconSize{
+    line-height: 100 !important;
+    vertical-align: middle !important;
+    border-style: none !important;
+    height: 50px !important;
+    width: 50px !important; 
 }
