@@ -18,9 +18,40 @@ main{
 }
 
 #iconSize{
-    line-height: 100 !important;
-    vertical-align: middle !important;
+    /* line-height: 100 !important; */
+    
     border-style: none !important;
     height: 50px !important;
     width: 50px !important; 
+    
+}
+
+#forecast{
+    background-color: #094479;
+    color: white;
+}
+
+#forecastNav{
+    background-color:#90b8cf!important; 
+    color: white;
+    
+    
+}
+#searchID{
+    width: 100%;
+}
+
+#searchButt{
+    width: 100%;
+    color: white;
+    background-color: #094479;
+    border-radius: 10px;
+}
+
+#pastButt{
+    width: 100%;
+    color: white;
+    background-color: #094479;
+    border-radius: 10px;
+    height: 30px;
 }

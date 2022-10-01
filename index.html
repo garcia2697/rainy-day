@@ -22,73 +22,85 @@
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-4">
             <div class="card">
-              <h3 class="card-header text-uppercase">Search for a City</h3>
-                <form id="user-form" class="card-body">
-                    <!-- <label class="form-label" for="username">City</label> -->
-                    <input name="username"  type="text" autofocus="true" class="search-bar" />
+              <h3 class="card-header text-uppercase" id="forecastNav">Search for a City</h3>
+                <div class="card-body">
+                    <div class="search">
+                    <input type="text" class="search-bar" id="searchID" placeholder="Search Here"/>
                     <br>
                     <br>
-                    <button type="submit" class="btn">Search</button>
-                </form>
+                    <button onclick="button()" id="searchButt" type="submit">Search</button>
+                    </div>
+                    
+                </div>
             </div>
-            <div>
-                <h1>past history will go here</h1>
+            <br>
+            <div class="card">
+                <h3 class="card-header text-uppercase" id="forecastNav">PAST SEARCHES</h3>
+                <div class="card-body">
+                <button onclick="pastButton()"  type="submit" id="pastButt"><h6 class="pastCity"> </h6>
+                </button>
+                </div>
             </div>
+            
         </div>
       
         <div class="col-12 col-md-8">
             <div class="col-12">
                 
-                <div class="list-group">
-                    <h2 class="city"> </h2>
-                    <img src="https://openweathermap.org/img/wn/01d.png" class = "iconNow" id = "iconSize"alt="">
+                <div class="card" id="forecast">
+                    <h2 class="card-header text-uppercase city"id="forecastNav"> Weather App </h2>
+                    <img src="./assets/images/blank.png" class = "iconNow" id = "iconSize"alt="">
                     <h4 class="desc1"></h4>
                     <h4 class="temp1"></h4>
                     <h4 class="wind1"></h4>
                     <h4 class="humidity1"></h4>
                 </div>
 
-                <br>
-                <h2>5-Day Forecast:</h2>
-                <div class="card">
+                
+                <h2 class="card-header text-uppercase" id="forecastNav">5-Day Forecast:</h2>
+                <div class="card" id="forecast">
                     <h4 class="date2"></h4>
-                    <img src="" class="icon2" id = "iconSize" alt="">
+                    <img src="./assets/images/blank.png" class="icon2" id = "iconSize" alt="">
                     <h4 class="desc2"></h4>
                     <h4 class="temp2"></h4>
                     <h4 class="wind2"></h4>
                     <h4 class="humidity2"></h4>
                     
                 </div>
-                <div class="card">
+                
+                <div class="card" id="forecastNav">
                     <h4 class="date3"></h4>
-                    <img src="" class="icon3" id = "iconSize" alt="">
+                    <img src="./assets/images/blank.png" class="icon3" id = "iconSize" alt="">
                     <h4 class="desc3"></h4>
                     <h4 class="temp3"></h4>
                     <h4 class="wind3"></h4>
                     <h4 class="humidity3"></h4>
                     
                 </div>
-                <div class="card">
+                
+                <div class="card" id="forecast">
                     <h4 class="date4"></h4>
-                    <img src="" class="icon4" id = "iconSize" alt="">
+                    <img src="./assets/images/blank.png" class="icon4" id = "iconSize" alt="">
                     <h4 class="desc4"></h4>
                     <h4 class="temp4"></h4>
                     <h4 class="wind4"></h4>
                     <h4 class="humidity4"></h4>
                     
                 </div>
-                <div class="card">
+                
+                <div class="card" id="forecastNav">
                     <h4 class="date5"></h4>
-                    <img src="" class="icon5" id = "iconSize" alt="">
+                    <img src="./assets/images/blank.png" class="icon5" id = "iconSize" alt="">
                     <h4 class="desc5"></h4>
                     <h4 class="temp5"></h4>
                     <h4 class="wind5"></h4>
                     <h4 class="humidity5"></h4>
                     
                 </div>
-                <div class="card">
+                
+                <div class="card" id="forecast">
                     <h4 class="date6"></h4>
-                    <img src="" class="icon6" id = "iconSize" alt="">
+                    <img src="./assets/images/blank.png" class="icon6" id = "iconSize" alt="">
                     <h4 class="desc6"></h4>
                     <h4 class="temp6"></h4>
                     <h4 class="wind6"></h4>

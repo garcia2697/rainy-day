@@ -1,3 +1,6 @@
+
+
+// function gets the weather data using fetch on the weather api
 let weather = {
     key:"335297aa73e68e93cce4065523b3ce25",
      fetchWeather: function(city){
@@ -9,9 +12,11 @@ let weather = {
             +this.key
         ).then((response)=>response.json())
         .then((data) => this.displayWeather(data));
-        // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+        
     },
     displayWeather:function(data){
+
+        // this section gets the weather information for the first day
         const { name } = data.city;
         const description1 = data.list[0].weather[0].description
         const icon1 = data.list[0].weather[0].icon;
@@ -19,9 +24,14 @@ let weather = {
         const speed1 = data.list[0].wind.speed;
         const humidity1= data.list[0].main.humidity;
         const dt_txt1 = data.list[0].dt_txt;
-        console.log(name,dt_txt1, icon1, description1, temp1, humidity1, speed1);
+        
+        
 
+        window.localStorage.setItem('location',JSON.stringify(name));
+        JSON.parse(window.localStorage.getItem('location'));
+       
 
+        // this section displays the weather information for the first day
         document.querySelector(".city").innerText = "Weather in " + name +"("+dt_txt1+")";
         document.querySelector(".iconNow").src = "https://openweathermap.org/img/wn/"+icon1 + ".png";
         document.querySelector(".desc1").innerText = "Description: " + description1;
@@ -29,7 +39,7 @@ let weather = {
         document.querySelector(".wind1").innerText = "Wind Speed: " + speed1 + "MPH";
         document.querySelector(".humidity1").innerText= "Humidity: " + humidity1 + "%";
         
-
+        // this section gets and displays the weather information for the second day
         const dt_txt2= data.list[8].dt_txt;
         const icon2 = data.list[8].weather[0].icon
         const description2 = data.list[8].weather[0].description
@@ -44,7 +54,7 @@ let weather = {
         document.querySelector(".humidity2").innerText= "Humidity: " + humidity2 + "%";
         console.log(dt_txt2, icon2, temp2, speed2, humidity2);
 
-
+        // this section gets and displays the weather information for the third day
         const dt_txt3= data.list[16].dt_txt;
         const icon3 = data.list[16].weather[0].icon
         const description3 = data.list[16].weather[0].description
@@ -58,6 +68,7 @@ let weather = {
         document.querySelector(".wind3").innerText = "Wind Speed: " + speed3 + "MPH";
         document.querySelector(".humidity3").innerText= "Humidity: " + humidity3 + "%";
         
+        // this section gets and displays the weather information for the fourth day
         const dt_txt4= data.list[24].dt_txt;
         const icon4 = data.list[24].weather[0].icon
         const description4 = data.list[24].weather[0].description
@@ -71,7 +82,7 @@ let weather = {
         document.querySelector(".wind4").innerText = "Wind Speed: " + speed4 + "MPH";
         document.querySelector(".humidity4").innerText= "Humidity: " + humidity4 + "%";
 
-
+        // this section gets and displays the weather information for the fifth day
         const dt_txt5= data.list[32].dt_txt;
         const icon5 = data.list[32].weather[0].icon
         const description5 = data.list[32].weather[0].description
@@ -85,6 +96,7 @@ let weather = {
         document.querySelector(".wind5").innerText = "Wind Speed: " + speed5 + "MPH";
         document.querySelector(".humidity5").innerText= "Humidity: " + humidity5 + "%";
 
+        // this section gets and displays the weather information for the sixth day
         const dt_txt6= data.list[39].dt_txt;
         const icon6 = data.list[39].weather[0].icon
         const description6 = data.list[39].weather[0].description
@@ -98,5 +110,50 @@ let weather = {
         document.querySelector(".wind6").innerText = "Wind Speed: " + speed6 + "MPH";
         document.querySelector(".humidity6").innerText= "Humidity: " + humidity6 + "%";
 
-    }
+    },
+    // will use the value in the search bar as the city parameter
+    search: function(){
+       
+        this.fetchWeather(document.querySelector(".search-bar").value);
+        document.querySelector(".pastCity").innerText= JSON.parse(window.localStorage.getItem('location'));
+        return;
+
+    },
+    // the function will search up the past city
+    pastSearch: function(){
+        this.fetchWeather(JSON.parse(window.localStorage.getItem('location')));
+        
+        return;
+    },
+    
+    
+};
+
+
+// activates the weather function by clicking on the search button
+const button = ()=>{
+   weather.search();
+    document.querySelector(".pastCity").innerText= JSON.parse(window.localStorage.getItem('location'));
+    
 }
+
+const pastButton = ()=>{
+    weather.pastSearch();
+    
+}
+
+// obtains the value in the local storage
+const ButtonText= JSON.parse(window.localStorage.getItem('location'))
+
+const placeholder = ()=>{
+    console.log("is this working?")
+    
+    weather.pastSearch();
+    
+}
+
+// populates the weather function by filling it with all previous searches
+placeholder();
+
+
+
